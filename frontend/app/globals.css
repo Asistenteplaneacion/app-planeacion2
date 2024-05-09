@@ -1,0 +1,97 @@
+/* Estilos para el contenedor de selects */
+.select-container {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los selects */
+.select-dropdown {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Estilos para el contenedor de macroactividades */
+.macroactividades-container {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los inputs de macroactividades */
+.macro-input {
+  margin-right: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Estilos para el botón de guardar */
+.save-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para la tabla de selecciones guardadas */
+.selection-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.selection-table th,
+.selection-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Estilos para filas pares de la tabla */
+.selection-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para filas impares de la tabla */
+.selection-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+/* Estilos para filas de la tabla al pasar el ratón */
+.selection-table tbody tr:hover {
+  background-color: #ddd;
+}
+
+
+.select-container {
+  margin-bottom: 20px;
+}
+
+/* Estilos para los selectores personalizados */
+.custom-select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  appearance: none; /* Oculta el estilo predeterminado del selector */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000' width='18px' height='18px'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 10px);
+  background-position-y: 50%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Estilos cuando se enfoca el selector */
+.custom-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Estilos para opciones de selector */
+.custom-select option {
+  padding: 8px;
+}
