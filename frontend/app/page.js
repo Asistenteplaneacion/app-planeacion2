@@ -3,6 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from '../styles/home.css'
+import Swal from 'sweetalert2';
 
 export default function Home() {
   const [objetivo, setObjetivo] = useState([]);
@@ -160,15 +161,14 @@ export default function Home() {
   
 
   const handleSave = () => {
-    const newData = 
-    { 
+    const newData = { 
       objetivo: selectedObjetivo,
       politica: selectedPolitica,
       programa: selectedPrograma,
       proyecto: selectedProyecto,
       componente: selectedComponente,
       responsableComponente: selectedResponsableComponente,
-      macroactividades: selectedMacroactividades,
+      macroactividades: [{ ...selectedMacroactividades }]
     };
     fetch(saveUrl, {
       method: 'POST',
@@ -181,10 +181,26 @@ export default function Home() {
     .then(data => {
       console.log('Data saved:', data);
       setSelectedData([...selectedData, newData]);
+      
+      // Mostrar SweetAlert de éxito
+      Swal.fire({
+        icon: 'success',
+        title: '¡Datos guardados correctamente!',
+        showConfirmButton: false,
+        timer: 1500
+      });
     })
     .catch(error => {
       console.error('Error saving data:', error);
+      // Mostrar SweetAlert de error
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al guardar los datos',
+        text: 'Ha ocurrido un error al intentar guardar los datos. Por favor, inténtalo de nuevo.',
+        confirmButtonText: 'Aceptar'
+      });
     });
+    
     setSelectedObjetivo("");
     setSelectedPolitica("");
     setselectedPrograma("");
@@ -197,6 +213,7 @@ export default function Home() {
       campo3: ""
     });
   };
+  
 
   return (
     <>
@@ -288,24 +305,23 @@ export default function Home() {
         </thead>
         <tbody>
         {selectedData.map((data, index) => (
-            <tr key={index}>
-              <td>{data.objetivo}</td>
-              <td>{data.politica}</td>
-              <td>{data.programa}</td>
-              <td>{data.proyecto}</td>
-              <td>{data.componente}</td>
-              <td>{data.responsableComponente}</td>
-              {/* Asegúrate de que data.macroactividades sea un array */}
-              {Array.isArray(data.macroactividades) && data.macroactividades.map((macroact, index) => (
-              <React.Fragment key={index}>
-                <td>{macroact.campo1}</td>
-                <td>{macroact.campo2}</td>
-                <td>{macroact.campo3}</td>
-              </React.Fragment>
-            ))}
-
-            </tr>
-          ))}
+  <tr key={index}>
+    <td>{data.objetivo}</td>
+    <td>{data.politica}</td>
+    <td>{data.programa}</td>
+    <td>{data.proyecto}</td>
+    <td>{data.componente}</td>
+    <td>{data.responsableComponente}</td>
+    {/* Asegúrate de que data.macroactividades sea un array */}
+    {Array.isArray(data.macroactividades) && data.macroactividades.map((macroact, macroIndex) => (
+      <React.Fragment key={macroIndex}>
+        <td>{macroact.campo1}</td>
+        <td>{macroact.campo2}</td>
+        <td>{macroact.campo3}</td>
+      </React.Fragment>
+    ))}
+  </tr>
+))}
         </tbody>
       </table>
     </>
