@@ -238,7 +238,7 @@ export default function Home() {
       </div>
 
       <div className="select-container">
-        <h3>Selecciona una programa:</h3>
+        <h3>Selecciona un programa:</h3>
         <select className="custom-select" value={selectedPrograma} onChange={handleProgramaChange}>
           <option value="">Seleccionar programa</option>
           {programa.map((pro, index) => (
@@ -248,7 +248,7 @@ export default function Home() {
       </div>
 
       <div className="select-container">
-        <h3>Selecciona una proyecto:</h3>
+        <h3>Selecciona un proyecto:</h3>
         <select className="custom-select" value={selectedProyecto} onChange={handleProyectoChange}>
           <option value="">Seleccionar proyecto</option>
           {proyecto.map((proyec, index) => (

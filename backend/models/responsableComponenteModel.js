@@ -37,9 +37,9 @@ const responsablesData =
 
 
 // Insertar los objetos de los Proyectos en la base de datos
-// ResponsableComponente.insertMany(responsablesData)
-//     .then(() => console.log('Responsables componentes insertados correctamente'))
-//     .catch(error => console.error('Error al insertar responsables componentes:', error));
+ResponsableComponente.insertMany(responsablesData)
+    .then(() => console.log('Responsables componentes insertados correctamente'))
+    .catch(error => console.error('Error al insertar responsables componentes:', error));
 
 
 module.exports = ResponsableComponente;
