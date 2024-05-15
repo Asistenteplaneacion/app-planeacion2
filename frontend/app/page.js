@@ -4,6 +4,8 @@
 import React, { useEffect, useState } from "react";
 import styles from '../styles/home.css'
 import Swal from 'sweetalert2';
+import Navbar from "./navbar";
+import AcmeLogo from '@/app/ui/acme-logo';
 
 export default function Home() {
   const [objetivo, setObjetivo] = useState([]);
@@ -161,6 +163,29 @@ export default function Home() {
   
 
   const handleSave = () => {
+    // Verificar si algún campo obligatorio está vacío
+    if (
+      !selectedObjetivo ||
+      !selectedPolitica ||
+      !selectedPrograma ||
+      !selectedProyecto ||
+      !selectedComponente ||
+      !selectedResponsableComponente ||
+      !selectedMacroactividades.campo1 ||
+      !selectedMacroactividades.campo2 ||
+      !selectedMacroactividades.campo3
+    ) {
+      // Mostrar SweetAlert de error
+      Swal.fire({
+        icon: 'error',
+        title: 'Error al guardar los datos',
+        text: 'Por favor, completa todos los campos antes de guardar.',
+        confirmButtonText: 'Aceptar'
+      });
+      return; // Detener la ejecución si algún campo está vacío
+    }
+  
+    // Si todos los campos están llenos, proceder con el guardado de datos
     const newData = { 
       objetivo: selectedObjetivo,
       politica: selectedPolitica,
@@ -201,6 +226,7 @@ export default function Home() {
       });
     });
     
+    // Limpiar los campos después de guardar los datos
     setSelectedObjetivo("");
     setSelectedPolitica("");
     setselectedPrograma("");
@@ -214,13 +240,19 @@ export default function Home() {
     });
   };
   
+  
 
   return (
     <>
+      <Navbar>
+      <div className="flex h-20 shrink-0 items-end rounded-lg bg-blue-500 p-4 md:h-52">
+        { <AcmeLogo />}
+      </div>
+      </Navbar>
       <div className="select-container">
         <h3>Selecciona un objetivo estratégico:</h3>
         <select className="custom-select" value={selectedObjetivo} onChange={handleObjetivoChange}>
-          <option value="">Seleccionar objetivo</option>
+          <option value="">Seleccionar</option>
           {objetivo.map((obj, index) => (
             <option key={index} value={obj.nombre}>{obj.nombre}</option>
           ))}
@@ -230,7 +262,7 @@ export default function Home() {
       <div className="select-container">
         <h3>Selecciona una política:</h3>
         <select className="custom-select" value={selectedPolitica} onChange={handlePoliticaChange}>
-          <option value="">Seleccionar política</option>
+          <option value="">Seleccionar</option>
           {politica.map((pol, index) => (
             <option key={index} value={pol.nombre}>{pol.nombre}</option>
           ))}
@@ -240,7 +272,7 @@ export default function Home() {
       <div className="select-container">
         <h3>Selecciona un programa:</h3>
         <select className="custom-select" value={selectedPrograma} onChange={handleProgramaChange}>
-          <option value="">Seleccionar programa</option>
+          <option value="">Seleccionar</option>
           {programa.map((pro, index) => (
             <option key={index} value={pro.nombre}>{pro.nombre}</option>
           ))}
@@ -250,7 +282,7 @@ export default function Home() {
       <div className="select-container">
         <h3>Selecciona un proyecto:</h3>
         <select className="custom-select" value={selectedProyecto} onChange={handleProyectoChange}>
-          <option value="">Seleccionar proyecto</option>
+          <option value="">Seleccionar</option>
           {proyecto.map((proyec, index) => (
             <option key={index} value={proyec.nombre}>{proyec.nombre}</option>
           ))}
@@ -260,7 +292,7 @@ export default function Home() {
       <div className="select-container">
         <h3>Selecciona un componente:</h3>
         <select className="custom-select" value={selectedComponente} onChange={handleComponenteChange}>
-          <option value="">Seleccionar componente</option>
+          <option value="">Seleccionar</option>
           {componente.map((componen, index) => (
             <option key={index} value={componen.codigoComponente}>{componen.codigoComponente}</option>
           ))}
@@ -270,7 +302,7 @@ export default function Home() {
       <div className="select-container">
         <h3>Selecciona un areá Responsable:</h3>
         <select className="custom-select" value={selectedResponsableComponente} onChange={handleResponsableComponenteChange}>
-          <option value="">Seleccionar Areá</option>
+          <option value="">Seleccionar</option>
           {responsableComponente.map((ResComponen, index) => (
             <option key={index} value={ResComponen.area}>{ResComponen.area}</option>
           ))}
@@ -286,9 +318,9 @@ export default function Home() {
 
 
 
-      <button className="save-button"  onClick={handleSave}>Guardar selección</button>
+      <button className="save-button"  onClick={handleSave}>Guardar</button>
 
-      <h3>Selecciones guardadas:</h3>
+      <h3></h3>
       <table className="selection-table">
         <thead>
           <tr>

@@ -1,0 +1,35 @@
+/* Estilos para el navbar */
+.navbar {
+    background-color: #ce3e3e; /* Rojo más sutil */
+    color: #ffffff; /* Texto blanco */
+    padding: 0 20px; /* Agrega espacio alrededor del contenido del navbar */
+}
+
+/* Estilos para el logo del navbar */
+.navbar-logo-container {
+    padding: 16px; /* Ajusta el relleno del contenedor según sea necesario */
+}
+
+.navbar-logo {
+    width: 100px; /* Ajusta el ancho del logo según sea necesario */
+    height: auto; /* Mantiene la proporción del logo */
+}
+
+/* Estilos para el texto "FADP" */
+.navbar-text {
+    font-size: 32px; /* Tamaño de letra aumentado */
+    margin-left: auto; /* Alineación a la derecha */
+    margin-right: 20px; /* Espacio entre el logo y el texto */
+    margin-bottom: 0; /* Quita el margen inferior del texto */
+    line-height: 1; /* Alinea el texto verticalmente con el logo */
+}
+
+/* Estilos para los ítems del menú del navbar */
+.navbar-menu-item {
+    margin-right: 20px; /* Margen derecho entre los ítems */
+}
+
+/* Estilos para el último ítem del menú del navbar */
+.navbar-menu-item:last-child {
+    margin-right: 0; /* Quita el margen derecho del último ítem */
+}
