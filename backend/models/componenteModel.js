@@ -656,9 +656,10 @@ const componenteData =
 
 
 // Insertar los objetos de los Proyectos en la base de datos
-Componente.insertMany(componenteData)
-    .then(() => console.log('Componentes insertados correctamente'))
-    .catch(error => console.error('Error al insertar Componentes:', error));
+
+// Componente.insertMany(componenteData)
+//     .then(() => console.log('Componentes insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Componentes:', error));
 
     
 module.exports = Componente;

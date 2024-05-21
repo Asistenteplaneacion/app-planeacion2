@@ -12,14 +12,6 @@ const actividadSchema = mongoose.Schema({
 
 const Actividad = mongoose.model('Actividad', actividadSchema);
 
-// Lista de macroactividades de componente
-// const actividadData = {
-//     nombre: 'Identificar los recursos y/o servicios bibliográficos necesarios por programa académico.',
-//     periodoEjecucion: {
-//         fecha: 'I y II Periodo'
-//     }
-// };
-
 
 // Insertar los objetos de los Proyectos en la base de datos
 

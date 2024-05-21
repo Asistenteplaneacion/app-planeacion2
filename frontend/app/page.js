@@ -324,36 +324,37 @@ export default function Home() {
       <table className="selection-table">
         <thead>
           <tr>
-          <th>Objetivo Estratégico</th>
-          <th>Política</th>
-          <th>Programa</th>
-          <th>Proyecto</th>
-          <th>Componente</th>
-          <th>Responsable Componente</th>
-          <th>Macroactividad Campo 1</th>
-          <th>Macroactividad Campo 2</th>
-          <th>Macroactividad Campo 3</th> 
+            <th>Objetivo Estratégico</th>
+            <th>Política</th>
+            <th>Programa</th>
+            <th>Proyecto</th>
+            <th>Componente</th>
+            <th>Responsable Componente</th>
+            <th>Macroactividad Campo 1</th>
+            <th>Macroactividad Campo 2</th>
+            <th>Macroactividad Campo 3</th> 
           </tr>
         </thead>
         <tbody>
         {selectedData.map((data, index) => (
-  <tr key={index}>
-    <td>{data.objetivo}</td>
-    <td>{data.politica}</td>
-    <td>{data.programa}</td>
-    <td>{data.proyecto}</td>
-    <td>{data.componente}</td>
-    <td>{data.responsableComponente}</td>
-    {/* Asegúrate de que data.macroactividades sea un array */}
-    {Array.isArray(data.macroactividades) && data.macroactividades.map((macroact, macroIndex) => (
-      <React.Fragment key={macroIndex}>
-        <td>{macroact.campo1}</td>
-        <td>{macroact.campo2}</td>
-        <td>{macroact.campo3}</td>
-      </React.Fragment>
-    ))}
-  </tr>
-))}
+            <tr key={index}>
+              <td>{data.objetivo}</td>
+              <td>{data.politica}</td>
+              <td>{data.programa}</td>
+              <td>{data.proyecto}</td>
+              <td>{data.componente}</td>
+              <td>{data.responsableComponente}</td>
+
+
+              {Array.isArray(data.macroactividades) && data.macroactividades.map((macroact, macroIndex) => (
+                <React.Fragment key={macroIndex}>
+                  <td>{macroact.campo1}</td>
+                  <td>{macroact.campo2}</td>
+                  <td>{macroact.campo3}</td>
+                </React.Fragment>
+              ))}
+            </tr>
+            ))}
         </tbody>
       </table>
     </>

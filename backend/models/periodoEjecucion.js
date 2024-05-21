@@ -17,9 +17,9 @@ const periodoData = [
 ]
 
 
-Periodo.insertMany(periodoData)
-    .then(() => console.log('Periodos insertados correctamente'))
-    .catch(error => console.error('Error al insertar Periodos:', error));
+// Periodo.insertMany(periodoData)
+//     .then(() => console.log('Periodos insertados correctamente'))
+//     .catch(error => console.error('Error al insertar Periodos:', error));
 
 module.exports = Periodo;
 
