@@ -48,8 +48,7 @@ const programasData =[
 ];
 
 
-// Insertar los objetos de los Programas en la base de datos
-
+// El codigo de abajo es para insertar en la base de datos el array los datos. lo dejo comentado porque ya estan insertados los datos
 
 // Programa.insertMany(programasData)
 //     .then(() => console.log('Programas insertados correctamente'))

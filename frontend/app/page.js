@@ -31,10 +31,6 @@ export default function Home() {
     campo3: ""
   });
 
-
-
-
-
   const [selectedData, setSelectedData] = useState([]);
 
 
@@ -45,9 +41,6 @@ export default function Home() {
   const baseComponente = 'http://localhost:5000/componente';
   const baseResponsableComponente = 'http://localhost:5000/responsableComponente';
   const baseMacroactividades = 'http://localhost:5000/macroactividades';
-
-
-
 
   const saveUrl = 'http://localhost:5000/saveData';
 

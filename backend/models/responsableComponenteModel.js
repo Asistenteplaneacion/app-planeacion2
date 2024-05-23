@@ -36,7 +36,7 @@ const responsablesData =
 ];
 
 
-// Insertar los objetos de los Proyectos en la base de datos
+// El codigo de abajo es para insertar en la base de datos el array los datos. lo dejo comentado porque ya estan insertados los datos
 
 // ResponsableComponente.insertMany(responsablesData)
 //     .then(() => console.log('Responsables componentes insertados correctamente'))

@@ -24,7 +24,7 @@ const objetivosData = [
 ];
     
 
-// Insertar los objetos de los Objetivos Estratégicos en la base de datos
+// El codigo de abajo es para insertar en la base de datos el array los datos. lo dejo comentado porque ya estan insertados los datos
 
 // ObjetivoEstrategico.insertMany(objetivosData)
 //     .then(() => console.log('Objetivos Estratégicos insertados correctamente'))

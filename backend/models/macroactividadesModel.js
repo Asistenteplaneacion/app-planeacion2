@@ -15,14 +15,4 @@ const macroactividadesSchema = mongoose.Schema({
 const Macroactividades = mongoose.model('Macroactividades', macroactividadesSchema);
 
 
-// Lista de macroactividades de componente
-// const macroactividadData = {
-//     nombre: 'Coordinación de Educación Continua',
-// };
-
-// Insertar los objetos de los Proyectos en la base de datos
-// Macroactividad.insertMany(macroactividadData)
-//     .then(() => console.log('Proyectos insertados correctamente'))
-//     .catch(error => console.error('Error al insertar Proyectos:', error));
-
 module.exports = Macroactividades;

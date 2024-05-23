@@ -13,11 +13,5 @@ const actividadSchema = mongoose.Schema({
 const Actividad = mongoose.model('Actividad', actividadSchema);
 
 
-// Insertar los objetos de los Proyectos en la base de datos
-
-// actividad.insertMany(actividadData)
-//     .then(() => console.log('actividad insertados correctamente'))
-//     .catch(error => console.error('Error al insertar actividad:', error));
-
 module.exports = Actividad;
 

@@ -17,6 +17,8 @@ const periodoData = [
 ]
 
 
+// El codigo de abajo es para insertar en la base de datos el array los datos. lo dejo comentado porque ya estan insertados los datos
+
 // Periodo.insertMany(periodoData)
 //     .then(() => console.log('Periodos insertados correctamente'))
 //     .catch(error => console.error('Error al insertar Periodos:', error));

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-                                           // por defecto ya lo busca, no hace falta colocar la extension .js
+
 
 if(!process.env.MONGODB_URL){
     throw new Error('añadir url en .env')
@@ -25,6 +25,10 @@ const dbConnect =  (app) => {
 }
 
 module.exports = dbConnect
+
+
+
+
 
 // const dbConnect = (app) =>{
 //     mongoose.connect(process.env.MONGODB_URL)

@@ -655,7 +655,7 @@ const componenteData =
 ];
 
 
-// Insertar los objetos de los Proyectos en la base de datos
+// El codigo de abajo es para insertar en la base de datos el array los datos. lo dejo comentado porque ya estan insertados los datos
 
 // Componente.insertMany(componenteData)
 //     .then(() => console.log('Componentes insertados correctamente'))
